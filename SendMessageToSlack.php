@@ -6,7 +6,7 @@
  * Date: 03.04.16
  * Time: 21:12
  *
- * make sure php5-curl in installed on your system
+ * make sure php5-curl is installed on your system
  *
  */
 class SendMessageToSlack {
@@ -54,11 +54,11 @@ class SendMessageToSlack {
         // convert to json
         $enc = json_encode($this->payload);
 
-        // curl stuff.
+        // curl stuff
         curl_setopt($this->curlObject, CURLOPT_POST, 1);
         curl_setopt($this->curlObject, CURLOPT_POSTFIELDS, $enc);
         curl_setopt($this->curlObject, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        curl_setopt($this->curlObject, CURLOPT_VERBOSE, 0); // don't show output on the screen.
+        curl_setopt($this->curlObject, CURLOPT_VERBOSE, 0); // don't show output on the screen
         curl_setopt($this->curlObject, CURLOPT_RETURNTRANSFER, true);
 
         // and send !
